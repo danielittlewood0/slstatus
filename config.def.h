@@ -62,6 +62,27 @@ static const char unknown_str[] = "n/a";
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  */
 static const struct arg args[] = {
-	/* function format          argument */
-	{ datetime, "%s",           "%F %T" },
+	/* function            format     argument */
+	{ datetime,           "%s | ",        "%F %T"     },
+ /* */
+
+  { battery_perc,       "BAT0: %s%, ",  "BAT0"      },
+  { battery_state,      "%s, ",         "BAT0"      },
+  { battery_remaining,  "%s | ",        "BAT0"      },
+  { battery_perc,       "BAT1: %s%, ",  "BAT1"      },
+  { battery_state,      "%s, ",         "BAT1"      },
+  { battery_remaining,  "%s | ",        "BAT1"      },
+ /* */
+  { cpu_perc,           "CPU: %s% | ",  NULL        },
+  { ram_used,           "RAM: %s | ",   NULL        },
+  { disk_used,          "DISK: %s/",    "/"         },
+  { disk_total,         "%s | ",        "/"         },
+ /* */
+  /* { wifi_essid,      , "%s",         "wlan0"     }, */
+  { ipv4,               "%s | ",        "wlan0"     },
+  /* { netspeed_rx,     , "%s",         "wlan0"     }, */
+ /* */
+  { vol_perc,           "%s% | ",       "/dev/mixer"},
+  { username,           "%s@",          NULL        },
+  { hostname,           "%s",           NULL        },
 };
